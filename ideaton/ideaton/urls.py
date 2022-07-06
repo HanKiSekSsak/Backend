@@ -4,6 +4,8 @@ from django.urls import path
 from tag_list import views
 from account import views as account_views
 
+app_name = "account"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -17,7 +19,7 @@ urlpatterns = [
     path('logout/', account_views.logout, name = 'logout'),
 
     # 회원가입 url 생성
-    path('signup/', account_views.signup, name = 'signup'),
+    path('register/', account_views.register, name = 'register'),
 
     # tag url 생성
     path('tag_list/', views.tag, name = 'tag'),
