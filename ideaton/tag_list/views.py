@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from tag_list import views
 
 # Create your views here.
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'main.html')
+
+def category(request):
+    return render(request, 'category.html')
 
 def tag(request):
     return render(request, 'tag.html')

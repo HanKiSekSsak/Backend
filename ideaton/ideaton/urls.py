@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path
 from tag_list import views
@@ -9,6 +8,9 @@ urlpatterns = [
 
     # home url 생성
     path('', views.home, name = 'home'),
+
+    # category url 생성
+    path('category/', views.category, name = 'category'),
 
     # 로그인 url 생성
     path('login/', account_views.login, name = 'login'),
