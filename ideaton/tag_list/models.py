@@ -5,6 +5,9 @@ class category(models.Model):
     categoryToken = models.CharField(max_length=20)
     name = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.name
+
 # recipe
 class recipe(models.Model):
     recipeToken = models.CharField(max_length=20)
