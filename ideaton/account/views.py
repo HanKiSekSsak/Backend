@@ -10,13 +10,16 @@ def login(request):
         user = auth.authenticate(request, username = userid, password = pwd)
         if user is not None:
             auth.login(request, user)
-            return redirect('tag_list:tag')
+            # tag.html
+            return render(request, 'tag.html')
         else:
-            return redirect('account:register')
+            # register.html
+            return render(request, 'register.html')
 
     # get요청이 들어오면 login form을 담고있는 login.html을 띄워준다.
     else:
-        return redirect('account:login')
+        # login.html
+        return render(request, 'login.html')
 
 def logout(request):
     auth.logout(request)
