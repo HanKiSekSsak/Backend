@@ -1,5 +1,3 @@
-// For git commit
-
 let ingredientBtn = document.getElementById('ingredient-btn');
 let categoryBtn = document.getElementById('category-btn');
 
