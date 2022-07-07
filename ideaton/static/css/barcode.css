@@ -41,11 +41,7 @@
     border-radius:5px;
 }
 
-<<<<<<< HEAD
 .content > form > input[type=submit]{
-=======
-.content > form > input[type=button]{
->>>>>>> origin/yeonjeong
     width:504px;
     height:50px;
 
@@ -63,11 +59,7 @@
     color:#fff;
 }
 
-<<<<<<< HEAD
 .content > form > input[type=submit]:hover{
-=======
-.content > form > input[type=button]:hover{
->>>>>>> origin/yeonjeong
     width:500px;
 
     color:#42C1C1;
