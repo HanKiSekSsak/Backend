@@ -15,7 +15,14 @@ def ingredient(request):
     return render(request, 'list.html')
 
 def barcode(request):
-    return render(request, 'barcode.html')
+    if request.method == 'POST':
+        foodf = foodform(request.POST)
+        if foodf.is_valid():
+            foodf.save()
+            return redirect('barcode')
+    else:
+        foodf = food()
+    return render(request, 'barcode.html', {'foodf': foodf})
 
 def caformcreat(request):
     if request.method == 'POST':
