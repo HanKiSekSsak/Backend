@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from tag_list import views
 from .forms import categoryform, foodform
 from django.contrib import auth
+from django.shortcuts import get_object_or_404
+from .models import food
 
 # Create your views here.
 def home(request):
@@ -24,9 +26,9 @@ def barcode(request):
     return render(request, 'barcode.html')
 
 # 입력한 재료들을 띄워주는 코드
-def listform(request):
-    ingre = food.objects.all()
-    return render(request, 'list.html', {'ingre' : ingre})
+def listin(request, foodf_id):
+    barcode_a = get_object_or_404(food, pk=foodf_id)
+    return render(request, 'list.html', {'barcode_a':barcode_a})
 
 def caformcreat(request):
     if request.method == 'POST':

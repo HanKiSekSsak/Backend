@@ -23,7 +23,9 @@
     </div>
     <ul class="food-list">
       <li>
-          <div class="food-name">{{ ingre.foodname }}</div>
+        {% for barcode in barcode_a.foodname_set.all %}
+          <div class="food-name">{{ barcode_a.id }}</div>
+        {% endfor %}
           <div class="day gray">
           <p>D + 30</p>
         </div>
