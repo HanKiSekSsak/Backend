@@ -19,6 +19,15 @@ urlpatterns = [
     # ingredient url 생성
     path('ingredient/', views.ingredient, name = 'ingredient'),
 
+    # barcode url 생성
+    path('barcode/', views.barcode, name = 'barcode'),
+
+    # select recipe url 생성
+    path('select/', views.select, name = 'select'),
+
+    # recipe url 생성
+    path('recipe/', views.recipe, name = 'recipe'),
+
     # 로그인 url 생성
     path('login/', account_views.login, name = 'login'),
 

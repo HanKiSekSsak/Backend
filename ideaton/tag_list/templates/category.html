@@ -18,7 +18,7 @@
     <div class="header">
         <img src="{% static 'image/Logo.svg' %}"/>
     </div>
-    <link rel="stylesheet" type = 'text/css' href = "{% static 'css/category.css' %}">
+
     <div class="content">
         <div class="img-box">
             <img src="{% static 'image/knifeWithSpoon.svg' %}">
@@ -49,18 +49,27 @@
                 </div>
 
                 <div class="list-box">
-                    <div class="list">마늘</div>
-                    <div class="list">파</div>
-                    <div class="list">두부</div>
-                    <div class="list">양파</div>
-                    <div class="list">찌게</div>
-                    <div class="list">찌게</div>
-                    <div class="list">찌게</div>
-                    <div class="list">찌게</div>
-                    <div class="list">찌게</div>
+                    <div class="list" onclick="SubmitList(event)">찌개</div>
+                    <div class="list" onclick="SubmitList(event)">파스타</div>
+                    <div class="list" onclick="SubmitList(event)">밥</div>
+                    <div class="list" onclick="SubmitList(event)">찜</div>
+                    <div class="list" onclick="SubmitList(event)">찌게5</div>
+                    <div class="list" onclick="SubmitList(event)">찌게6</div>
+                    <div class="list" onclick="SubmitList(event)">찌게7</div>
+                    <div class="list" onclick="SubmitList(event)">찌게8</div>
+                    <div class="list" onclick="SubmitList(event)">찌게9</div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <form id="secret-form" action="{% url 'select' %}" method="POST">
+        <!-- 여기다가 작업하셈 -->
+        {% csrf_token %}
+        <input type="text" id="form-category" value="" name="category"/>
+    </form>
+
+    <script src="{% static 'js/category.js' %}"></script>
 </body>
 </html>

@@ -14,16 +14,24 @@ def category(request):
 def ingredient(request):
     return render(request, 'list.html')
 
+def barcode(request):
+    return render(request, 'barcode.html')
+
 def caformcreat(request):
     if request.method == 'POST':
         form = categoryform(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('category')
+            return render(request, 'list.form')
     else:
-        form = categoryform()
+        form = category()
     return render(request, 'category.html', {'form':form})
 
+def select(request):
+    return render(request, 'select_recipe.html')
+
+def recipe(request):
+    return render(request, 'recipe.html')
 
 def tag(request):
     return render(request, 'tag.html')
