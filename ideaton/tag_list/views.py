@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from tag_list import views
-from .forms import categoryform
+from .forms import categoryform, foodform
 from django.contrib import auth
-from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 # Create your views here.
 def home(request):
@@ -19,10 +18,15 @@ def barcode(request):
         foodf = foodform(request.POST)
         if foodf.is_valid():
             foodf.save()
-            return redirect('barcode')
+            return redirect('home')
     else:
-        foodf = food()
-    return render(request, 'barcode.html', {'foodf': foodf})
+        foodf = foodform()
+    return render(request, 'barcode.html')
+
+# 입력한 재료들을 띄워주는 코드
+def listform(request):
+    ingre = food.objects.all()
+    return render(request, 'list.html', {'ingre' : ingre})
 
 def caformcreat(request):
     if request.method == 'POST':
@@ -39,9 +43,6 @@ def select(request):
 
 def recipe(request):
     return render(request, 'recipe.html')
-
-def tag(request):
-    return render(request, 'tag.html')
 
 def jjigae(request):
     return render(request, 'jjigae.html')

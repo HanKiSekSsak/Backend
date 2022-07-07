@@ -8,6 +8,7 @@ class category(models.Model):
     def __str__(self):
         return self.name
 
+# barcode
 class food(models.Model):
     foodname = models.CharField(max_length=20)
     date = models.CharField(max_length=20)

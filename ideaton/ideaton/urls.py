@@ -2,15 +2,11 @@ from django.contrib import admin
 from django.urls import path
 from tag_list import views
 from account import views as account_views
-from rest_framework_jwt.views import obtain_jwt_token
 
 app_name = "account"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # token url 생성
-    path('api-token-auth/', obtain_jwt_token),
 
     # home url 생성
     path('', views.home, name = 'home'),
@@ -38,9 +34,6 @@ urlpatterns = [
 
     # 회원가입 url 생성
     path('register/', account_views.register, name = 'register'),
-
-    # tag url 생성
-    path('tag/', views.tag, name = 'tag'),
 
     # tag_list에서 찌개 url 생성
     path('tag/jjigae/', views.jjigae, name = 'jjigae'),

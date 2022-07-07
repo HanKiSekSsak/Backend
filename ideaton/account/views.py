@@ -12,9 +12,9 @@ def login(request):
         user = auth.authenticate(request, username = id, password = pwd)
         if user is not None:
             auth.login(request, user)
-            return redirect('tag')
+            return redirect('home')
         else:
-            return redirect('tag')
+            return redirect('home')
 
     else:
         return render(request, 'login.html')
@@ -30,5 +30,5 @@ def register(request):
         if request.POST.get('password') == request.POST.get('confirm'):
             user = User.objects.create_user(username = request.POST['name'], password = request.POST['password'])
             auth.login(request, user)
-            return redirect('tag')
+            return redirect('home')
     return render(request, 'register.html')
