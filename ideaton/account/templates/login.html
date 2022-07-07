@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +22,12 @@
         <form class="login-box" action = "{% url 'login' %}" method = 'POST'>
             {% csrf_token %}
             <h2>회원 정보를 입력해주세요</h2>
-            <input type="text" id="user-id" placeholder="아이디를 입력해주세요">
-            <input type="password" id="user-password" placeholder="비밀번호를 입력해주세요">
+            <input type="text" name="id" id="user_id" placeholder="아이디를 입력해주세요">
+            <input type="password" name="password" id="user_password" placeholder="비밀번호를 입력해주세요">
 
-            <input type="button" id="submit" value="로그인">
+            <input type="submit" id="submit" value="로그인">
 
             <div class="text-box">
-
                 <a href="{% url 'register' %}">회원가입 하기</a>
             </div>
         </form>
