@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// For git commit
-=======
 let ingredientBtn = document.getElementById('ingredient-btn');
 let categoryBtn = document.getElementById('category-btn');
 let barcodeBtn = document.getElementById('barcode-btn');
@@ -22,4 +19,3 @@ window.onload = ()=>{
     categoryBtn.addEventListener("click", CategoryMove);
     barcodeBtn.addEventListener("click", BarcodeMove);
 }
->>>>>>> origin/yeonjeong

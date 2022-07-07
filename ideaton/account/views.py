@@ -2,13 +2,9 @@ from django.shortcuts import redirect, render
 from django.contrib import auth
 from django.contrib.auth.models import User
 
-<<<<<<< HEAD
-# 로그인
-=======
-def main(request):
-    return render(request, 'main.html')
 
->>>>>>> origin/yeonjeong
+# 로그인
+
 def login(request):
     if request.method == 'POST':
         id = request.POST.get('user_id')
@@ -16,15 +12,9 @@ def login(request):
         user = auth.authenticate(request, username = id, password = pwd)
         if user is not None:
             auth.login(request, user)
-<<<<<<< HEAD
             return redirect('tag')
         else:
             return redirect('tag')
-=======
-            return rendirect('home')
-        else:
-            return render(request, 'login.html')
->>>>>>> origin/yeonjeong
 
     else:
         return render(request, 'login.html')
