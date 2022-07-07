@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
-from tag_list import views
 from .forms import categoryform, foodform
 from django.contrib import auth
 from django.shortcuts import get_object_or_404
 from .models import food
+import logging
+
+def wpqkf(request):
+    return render(request, 'wpqkf.html')
 
 # Create your views here.
 def home(request):
@@ -12,8 +15,9 @@ def home(request):
 def category(request):
     return render(request, 'category.html')
 
-def ingredient(request):
-    return render(request, 'list.html')
+def ingredient(request, foodname_id):
+    barcode_a = get_object_or_404(food, pk = foodname_id)
+    return render(request, 'list.html', {'barcode_a':barcode_a})
 
 def barcode(request):
     if request.method == 'POST':
@@ -24,21 +28,6 @@ def barcode(request):
     else:
         foodf = foodform()
     return render(request, 'barcode.html')
-
-# 입력한 재료들을 띄워주는 코드
-def listin(request, foodf_id):
-    barcode_a = get_object_or_404(food, pk=foodf_id)
-    return render(request, 'list.html', {'barcode_a':barcode_a})
-
-def caformcreat(request):
-    if request.method == 'POST':
-        form = categoryform(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'list.form')
-    else:
-        form = category()
-    return render(request, 'category.html', {'form':form})
 
 def select(request):
     return render(request, 'select_recipe.html')

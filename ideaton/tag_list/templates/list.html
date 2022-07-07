@@ -23,9 +23,7 @@
     </div>
     <ul class="food-list">
       <li>
-        {% for barcode in barcode_a.foodname_set.all %}
-          <div class="food-name">{{ barcode_a.id }}</div>
-        {% endfor %}
+          <div class="food-name">{{ barcode_a.foodname_id }}</div>
           <div class="day gray">
           <p>D + 30</p>
         </div>
