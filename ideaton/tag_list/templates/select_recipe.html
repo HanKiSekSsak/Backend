@@ -61,7 +61,8 @@
             </div>
         </div>
         
-        <form class="secret-form" id="secret-form" action="" method="">
+        <form class="secret-form" id="secret-form" action="{% url 'recipe' %}" method="POST">
+            {% csrf_token %}
             <input type="text" name="recipe" id="recipe-name" value=""/>
         </form>
 

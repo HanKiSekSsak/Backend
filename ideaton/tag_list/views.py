@@ -1,8 +1,9 @@
+from webbrowser import get
 from django.shortcuts import render, redirect
 from .forms import categoryform, foodform
 from django.contrib import auth
 from django.shortcuts import get_object_or_404
-from .models import food
+from .models import food, recipe
 import logging
 
 def wpqkf(request):
@@ -33,7 +34,8 @@ def select(request):
     return render(request, 'select_recipe.html')
 
 def recipe(request):
-    return render(request, 'recipe.html')
+    recipe_name = request.POST.get('recipe')
+    return render(request, 'recipe.html', {'recipe_name' : recipe_name})
 
 def jjigae(request):
     return render(request, 'jjigae.html')

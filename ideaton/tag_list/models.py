@@ -18,7 +18,7 @@ class food(models.Model):
 
 # recipe
 class recipe(models.Model):
-    recipeToken = models.CharField(max_length=20)
+    category_name = models.ForeignKey('category', on_delete = models.CASCADE)
     title = models.CharField(max_length=20)
 
 # recipeComment
